@@ -22,26 +22,27 @@
         <h1> Produtos </h1>
       </div>
       <section>
-        {% for dbs in db %}
-        <div class="py-5 bg-light">
-          <div id="produtos" class="container">
-            <div class=" row ">
-              <div class="col-md-3 ">
+       
+        <div class="py-3 bg-light">
+          <div id="produtos" class="container d-flex" >
+            <div class="row justify" >                 
+              {% for dbs in db %}
+              <div class="col-md-4">
                 <div class="card mb-3 box-shadow ">
-                  <img class="card-img-top " src="{{dbs.imagem}}">
+                  <img class="card-img-top" src="{{dbs.imagem}}">
                   <div class="card-body ">
                     <p class="card-text ">{{dbs.nome}}</p>
-                    <p class="card-text ">Unidades Disponiveis {{dbs.quantidade}}</p>
+                    <p class="card-text ">Unidades Disponíveis {{dbs.quantidade}}</p>
                     <div class="d-flex justify-content-between align-items-center ">
-                      <small class="text-muted ">R$ {{dbs.preco}}</small>
+                      <small class="badge bg-primary text-wrap" style="width: 5rem;">R$ {{dbs.preco}}</small>
                     </div>
                   </div>
                 </div>
               </div>
+              {% endfor %}
             </div>
           </div>
         </div>
-          {% endfor %}
       </section>
 
 
