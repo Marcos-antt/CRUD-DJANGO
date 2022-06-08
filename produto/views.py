@@ -10,11 +10,7 @@ def home(request):
     data['db'] = Produto.objects.all()
     return render(request, 'index.html', data)
 
-#def form(request):
-    #produto_form = ProdutoForm()
-    #return render(request,'adicionar.html', {'produto_form':produto_form})
-
-def form (request):
+def form(request):
     data = {}
     data['form'] = ProdutoForm()
     return render(request, 'adicionar.html', data)
@@ -23,7 +19,16 @@ def create(request):
     form = ProdutoForm(request.POST or None)
     if form.is_valid():
         form.save()
-        return redirect('home') 
+        return redirect('home')
+    
+def edit(request, pk):
+    data = {}
+    data['db'] = Produto.objects.get(pk=pk)
+    data['form'] = ProdutoForm(instance=data['db'])
+    return render(request, 'adicionar.html', data)
+
+def update(request, pk):
+    return render(request, 'index.html')
 
 #def save(request):
     #produto = ProdutoForm(request.POST)
