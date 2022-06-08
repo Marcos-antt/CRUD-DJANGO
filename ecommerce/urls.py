@@ -8,7 +8,7 @@ urlpatterns = [
     path('adicionar/', form, name='form'),
     path('create/', create, name='create'),
     path('edit/<int:pk>/', edit, name='edit'),
-    path('update/<int:pk>/', update, name='update'),
+    path('update/<int:pk>', update, name='update'),
 
     
 ]

@@ -28,7 +28,12 @@ def edit(request, pk):
     return render(request, 'adicionar.html', data)
 
 def update(request, pk):
-    return render(request, 'index.html')
+    data = {}
+    data['db'] = Produto.objects.get(pk=pk)
+    form = ProdutoForm(request.POST or None, instance=data['db'])
+    if form.is_valid():
+        form.save()
+        return redirect('home')
 
 #def save(request):
     #produto = ProdutoForm(request.POST)
