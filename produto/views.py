@@ -7,7 +7,11 @@ from produto.models import Produto
 
 def home(request):
     data = {}
-    data['db'] = Produto.objects.all()
+    search = request.GET.get('search')
+    if search:
+        data['db'] = Produto.objects.filter(nome__icontains=search)  
+    else:
+        data['db'] = Produto.objects.all()
     return render(request, 'index.html', data)
 
 def form(request):
@@ -35,15 +39,16 @@ def update(request, pk):
         form.save()
         return redirect('home')
 
+def delete(request, pk):
+    db = Produto.objects.get(pk=pk)
+    db.delete()
+    return redirect('home')
+
 #def save(request):
     #produto = ProdutoForm(request.POST)
     #f = produto.save()
     #return render(request,'adicionar.html', context={'produto':produto})
-    
-    
-     
-    
-    
+      
 # Create a form instance from POST data.
 #f = ArticleForm(request.POST)
 
