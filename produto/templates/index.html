@@ -39,15 +39,15 @@
                   <div class="card-body">
                     <p class="card-text">{{dbs.nome}}</p>
                     <div class="unid">
-                      <p class="card-text">Unidades Disponíveis</p> <p class="badge bg-danger text-wrap">{{dbs.quantidade}}</p>
+                      <p class="card-text">Unidades Disponíveis <span class="badge bg-danger text-wrap">{{dbs.quantidade}}</span></p> 
                     </div>
                     <div class="d-flex justify-content-between align-items-center">
                       <div class="price">
-                        <small class="badge bg-primary badge text-wrap">R$ {{dbs.preco}}</small>
+                        <small class="badge bg-primary badge text-wrap ">R$ {{dbs.preco}}</small>
                       </div>
                     </div>
                     <div class="d-flex justify-content-between align-items-center">
-                      <div class="price">
+                      <div class="price col-8 m-auto pt-2 pb-2 text-center">
                         <a href="/edit/{{dbs.id}}" class="btn btn-dark">Editar</a>
                         <a href="/delete/{{dbs.id}}" class="btn btn-danger">Excluir</a>
                       </div>

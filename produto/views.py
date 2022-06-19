@@ -12,6 +12,7 @@ def home(request):
         data['db'] = Produto.objects.filter(nome__icontains=search)  
     else:
         data['db'] = Produto.objects.all()
+        data['db'] = Produto.objects.order_by('-id')
     return render(request, 'index.html', data)
 
 def form(request):
