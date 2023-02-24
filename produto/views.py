@@ -2,9 +2,6 @@ from django.shortcuts import render, redirect
 from produto.forms import ProdutoForm
 from produto.models import Produto
 
-# Create your views here.
-
-
 def home(request):
     data = {}
     search = request.GET.get('search')
