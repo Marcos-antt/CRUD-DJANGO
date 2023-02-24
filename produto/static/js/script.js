@@ -1,6 +1,5 @@
 (function(win, doc) {
         'use strict';
-        //Ajax do Formulário
         if (doc.querySelector('#form')) {
             let form = doc.querySelector('#form');
             function sendForm(event) {
