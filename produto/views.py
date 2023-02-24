@@ -45,14 +45,3 @@ def delete(request, pk):
     db.delete()
     return redirect('home')
 
-#def save(request):
-    #produto = ProdutoForm(request.POST)
-    #f = produto.save()
-    #return render(request,'adicionar.html', context={'produto':produto})
-      
-# Create a form instance from POST data.
-#f = ArticleForm(request.POST)
-
-# Save a new Article object from the form's data.
-# new_article = f.save()
-
